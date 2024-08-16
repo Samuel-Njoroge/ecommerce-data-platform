@@ -1,0 +1,24 @@
+# models/sources/sources.yml
+version: 2
+
+sources:
+  - name: bigquery
+    database: ecommerce-data-project-432606
+    schema: ecommerce
+    tables:
+      - name: customers
+        description: "Table containing customer information."
+      - name: geolocation
+        description: "Table containing geolocation data."
+      - name: order_items
+        description: "Table containing order items details."
+      - name: order_payments
+        description: "Table containing order payment information."
+      - name: order_reviews
+        description: "Table containing order review details."
+      - name: orders
+        description: "Table containing order details."
+      - name: products
+        description: "Table containing product details."
+      - name: sellers
+        description: "Table containing seller information."

@@ -1,0 +1,12 @@
+ecommerce_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service_account
+      project: ecommerce-data-project-432606
+      dataset: ecommerce
+      threads: 1
+      location: US
+      timeout_seconds: 300
+      keyfile: /opt/airflow/credentials/google_credentials.json

@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_sales_by_category
+    columns:
+      - name: product_category_name
+        tests:
+          - not_null
+      - name: total_sales
+        tests:
+          - not_null
+
+  - name: fct_avg_delivery_time
+    columns:
+      - name: customer_state
+        tests:
+          - not_null
+      - name: avg_delivery_time_days
+        tests:
+          - not_null
+
+  - name: fct_orders_by_state
+    columns:
+      - name: customer_state
+        tests:
+          - unique
+          - not_null
+      - name: order_count
+        tests:
+          - not_null
+
+sources:
+  - name: raw
+    database: ecommerce-data-project-432606
+    schema: ecommerce-data-project-432606.ecommerce
+    tables:
+      - name: orders
+      - name: order_items
+      - name: customers
+      - name: products

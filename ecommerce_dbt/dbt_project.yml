@@ -1,0 +1,14 @@
+name: 'ecommerce_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'bigquery'
+
+models:
+  my_dbt_project:
+    staging:
+      materialized: view
+    intermediate:
+      materialized: view
+    final:
+      materialized: table
